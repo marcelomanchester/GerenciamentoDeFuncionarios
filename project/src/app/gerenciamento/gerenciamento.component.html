@@ -1,0 +1,19 @@
+<div class="container">
+  <div *ngIf="listaColaboradores.length > 0">
+    <h2><b>Gerenciamento:</b></h2>
+    <div class='row'>
+      <div class="col-sm-4 card" *ngFor="let colaboradores of listaColaboradores" style="background-color: lightslategrey;">
+        <i class="fas fa-user-tie" style="font-size: 50px; text-align: center; padding: 5px; color:  darkslateblue;"></i>
+          <p>{{colaboradores.nome}}<br>
+          {{'Cargo: ' + colaboradores.cargo +'    Salário: '+ colaboradores.salario }}<br>
+          {{colaboradores.idade + 'Anos.'}}</p>
+      </div>
+    </div>  
+  </div>  
+  <div *ngIf="listaColaboradores.length == 0">
+    <h2><b>Aviso:</b></h2>
+    <div class="alert alert-danger" role="alert">
+      Não há colaboradores cadastrados!
+    </div>
+  </div>
+</div>  

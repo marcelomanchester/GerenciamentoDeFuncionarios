@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Edição de informações:</h1>
+  <div class="row">
+    <div class="input-group mb-3 col-sm-6">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+      </div>
+      <input (keyup)="updateNome($event)" value="{{colaboradorSelecionado['nome']}}"type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3 col-sm-6">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Idade</span>
+        </div>
+        <input (keyup)="updateIdade($event)"  value="{{colaboradorSelecionado['idade']}}" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+  </div>
+  <div class="row">
+    <div class="input-group mb-3 col-sm-4">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Salário</span>
+      </div>
+      <input (keyup)="updateSalario($event)" value="{{colaboradorSelecionado['salario']}}" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3 col-sm-4">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Cargo</span>
+      </div>
+      <input (keyup)="updateCargo($event)"  value="{{colaboradorSelecionado['cargo']}}" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+  </div>
+  <div class="col-sm-2">
+    <button (click)="checkFuncionario()"type="button" class="btn btn-dark">Enviar</button>
+  </div>
+  <div class="row">
+    <div *ngIf="check == false">
+      <div class="alert alert-danger" role="alert">
+        Informações inválidas!
+      </div>
+    </div>
+    <div *ngIf="check == true">
+      <div class="alert alert-success" role="alert">
+        Edição efetuada com sucesso!
+      </div>
+    </div>
+  </div>
+</div>  

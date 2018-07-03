@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="text-left">
+      <a routerLink="../">
+        <i class="fas fa-arrow-left"></i>
+        <p>Voltar</p>
+      </a>
+    </div>
+  </div>
+  <form>
+    <div class="form-row">
+      <div class="col-sm-8">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+            </div>
+            <input value="{{nome}}" (keyup)="updateNome($event)" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+          </div>  
+      </div>
+      <div class="col-sm-4">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Cargo</span>
+            </div>
+            <input value="{{cargo}}" (keyup)="updateCargo($event)" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"> 
+        </div> 
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-sm-2">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">R$</span>
+          </div>
+          <input value={{salario}} (keyup)=updateSalario($event) placeholder="Salário" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"> 
+        </div>
+      </div>      
+      <div class="col-sm-4">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">idade</span>
+          </div>
+          <input value="{{idade}}" (keyup)=updateIdade($event) type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+      </div>        
+      <div class="col-sm-6">
+        <button (click)="addFuncionario()" type="button" class="btn btn-dark">Enviar</button>
+      </div>       
+    </div>
+  </form>  
+  <div class="row">
+    <div *ngIf="check == true">
+        <div class="alert alert-success" role="alert">
+          Colaborador adicionado com sucesso!
+        </div>
+    </div>
+    <div *ngIf="check == false">
+        <div class="alert alert-danger" role="alert">
+          informações inválidas! 
+        </div>
+    </div>
+  </div>
+</div>  
+<!--<select [ngModel]="selectedValue" class="custom-select" id="inputGroupSelect01">
+    <option *ngFor="let pow in cargos" [value]="pow">{{pow}}</option>
+</select>-->
